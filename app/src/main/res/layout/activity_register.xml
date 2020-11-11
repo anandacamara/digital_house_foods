@@ -78,7 +78,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_registerActivity"
         android:layout_width="373dp"
         android:layout_height="49dp"
         android:layout_gravity="bottom"
