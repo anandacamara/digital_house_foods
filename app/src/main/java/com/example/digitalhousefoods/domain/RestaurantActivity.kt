@@ -6,7 +6,7 @@ import androidx.navigation.findNavController
 import com.example.digitalhousefoods.R
 import kotlinx.android.synthetic.main.activity_restaurant.*
 
-class RestaurantActivity : AppCompatActivity() {
+class RestaurantActivity : AppCompatActivity(), FoodsAdapter.OnClickFoodsListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_restaurant)
@@ -16,5 +16,8 @@ class RestaurantActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().apply {
             add(R.id.fragment_restaurant, fragInformation)
         }
+    }
+
+    override fun onClickFoods(position: Int) {
     }
 }
