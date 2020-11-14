@@ -23,6 +23,10 @@ class HomeActivity : AppCompatActivity(), RestaurantAdapter.OnClickRestaurantLis
 
     }
 
+    override fun onBackPressed() {
+        startActivity(Intent(this, LoginActivity::class.java))
+    }
+
     fun getRestaurants(): ArrayList<Restaurant>{
         return arrayListOf(Restaurant("Tony Roma's", "Av. Lavandisca, 717 - Indianópolis, SP", "22:00", R.drawable.image1),
             Restaurant("Aoyama - Moema", "Alameda do Arapanés, 532 - Moema", "00:00", R.drawable.image4),

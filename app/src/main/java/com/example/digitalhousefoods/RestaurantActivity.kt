@@ -1,7 +1,9 @@
 package com.example.digitalhousefoods
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.digitalhousefoods.domain.Foods
 import com.example.digitalhousefoods.domain.FoodsAdapter
@@ -26,6 +28,13 @@ class RestaurantActivity : AppCompatActivity(),
         rv_restaurants_information.adapter = adapter
         rv_restaurants_information.layoutManager = GridLayoutManager(this, 2)
         rv_restaurants_information.setHasFixedSize(true)
+
+        val toolbar: Toolbar = findViewById(R.id.toolbar_restaurant)
+        setSupportActionBar(toolbar)
+        toolbar.setNavigationOnClickListener {
+            onBackPressed()
+        }
+
     }
 
     fun getFoods(): ArrayList<Foods>{
@@ -85,7 +94,11 @@ class RestaurantActivity : AppCompatActivity(),
 
 
     override fun onClickFoods(position: Int) {
-
+        val food = listFoods.get(position)
+        val intent = Intent(this, FoodsActivity::class.java)
+        intent.putExtra("name", food.name)
+        intent.putExtra("information", food.information)
+        intent.putExtra("imageId", food.imageId)
+        startActivity(intent)
     }
-
 }

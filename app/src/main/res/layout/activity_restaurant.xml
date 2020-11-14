@@ -10,12 +10,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-<!--        <androidx.appcompat.widget.Toolbar-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            app:navigationIcon="@drawable/ic_back"-->
-<!--            android:background="@color/trasnparente"/>-->
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -36,27 +30,40 @@
                     android:id="@+id/name_restaurant"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginBottom="16dp"
                     android:textColor="@color/colorWhite"
-                    android:textSize="40dp"
+                    android:textSize="30dp"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView_restaurant"
                     tools:layout_editor_absoluteX="-35dp" />
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar_restaurant"
+                    app:titleTextColor="@color/trasnparente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:navigationIcon="@drawable/ic_back" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
                 android:text="Pratos principais"
                 android:textColor="@color/colorGray"
-                android:textStyle="bold"
                 android:textSize="30dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_restaurants_information"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 tools:listitem="@layout/item_food"/>
 
