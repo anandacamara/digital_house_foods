@@ -5,10 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.digitalhousefoods.domain.Restaurant
-import com.example.digitalhousefoods.domain.RestaurantActivity
 import com.example.digitalhousefoods.domain.RestaurantAdapter
 import kotlinx.android.synthetic.main.activity_home.*
-import kotlinx.android.synthetic.main.activity_register.*
 
 class HomeActivity : AppCompatActivity(), RestaurantAdapter.OnClickRestaurantListener {
     val listRestaurant = getRestaurants()
@@ -34,6 +32,10 @@ class HomeActivity : AppCompatActivity(), RestaurantAdapter.OnClickRestaurantLis
     }
 
     override fun onClickRestaurant(position: Int) {
-        startActivity(Intent(this, RestaurantActivity::class.java))
+        val restaurant = listRestaurant.get(position)
+        val intent = Intent(this, RestaurantActivity::class.java)
+        intent.putExtra("codigo", restaurant.imageViewid)
+        intent.putExtra("name", restaurant.name)
+        startActivity(intent)
     }
 }

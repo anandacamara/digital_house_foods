@@ -33,7 +33,6 @@ class FoodsAdapter (val listFoods: ArrayList<Foods>, val listener: OnClickFoodsL
         var ivFoods: ImageView = itemView.findViewById(R.id.image_food)
         var tvName: TextView = itemView.findViewById(R.id.tv_name_food)
 
-
         init {
             itemView.setOnClickListener(this)
         }

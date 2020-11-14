@@ -3,25 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_restaurant"
-    app:startDestination="@id/restaurantActivity"
-    tools:ignore="UnusedNavigation">
-
+    tools:ignore="UnusedNavigation"
+    app:startDestination="@id/restaurantActivity2">
     <activity
-        android:id="@+id/restaurantActivity"
-        android:name="com.example.digitalhousefoods.domain.RestaurantActivity"
-        android:label="activity_restaurant"
-        tools:layout="@layout/activity_restaurant">
-
-    <action
-        android:id="@+id/action_informationRestaurantFrangment_to_restaurantActivity"
-        app:destination="@+id/informationRestaurantFrangment" />
-
-    </activity>
-
-    <fragment
-        android:id="@+id/informationRestaurantFrangment"
-        android:name="com.example.digitalhousefoods.domain.InformationRestaurantFrangment"
-        android:label="fragment_information_restaurant_frangment"
-        tools:layout="@layout/fragment_information_restaurant_frangment" >
-    </fragment>
+        android:id="@+id/restaurantActivity2"
+        android:name="com.example.digitalhousefoods.RestaurantActivity"
+        android:label="RestaurantActivity" />
 </navigation>
